@@ -1,0 +1,113 @@
+.about {
+    background: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-primary), transparent);
+    border-radius: 2px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+}
+
+.metric-box {
+    text-align: center;
+    padding: 1rem;
+}
+
+.metric-icon {
+    margin-bottom: 1rem;
+}
+
+.metric-icon.primary {
+    color: var(--accent-primary);
+}
+
+.metric-icon.secondary {
+    color: var(--accent-secondary);
+}
+
+.metric-icon.tertiary {
+    color: var(--accent-tertiary);
+}
+
+.metric-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.metric-box p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.about-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .about-metrics {
+        padding: 2rem;
+        gap: 3rem;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding: 2rem;
+    }
+}
