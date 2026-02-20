@@ -205,10 +205,13 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .hero-image-placeholder {
-    width: min(350px, 100%);
+    width: min(500px, 40vw);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--bg-surface), var(--bg-color));
@@ -247,13 +250,38 @@
     height: 100%;
     z-index: 2;
     pointer-events: none;
+    top: 0;
+    left: 0;
+}
+
+@keyframes float-icon-left {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes float-icon-right {
+
+    0%,
+    100% {
+        transform: translateX(50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(-10px);
+    }
 }
 
 .icon-badge {
     position: absolute;
     background: var(--bg-surface);
     border: 1px solid rgba(138, 43, 226, 0.3);
-    /* Purple hue border */
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -261,30 +289,32 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.05);
-    animation: float 4s ease-in-out infinite;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
 .icon-cloud {
     top: 5%;
-    left: -5%;
+    left: 0%;
+    transform: translateX(-50%);
     color: var(--accent-primary);
-    animation-delay: 0s;
+    animation: float-icon-left 4s ease-in-out infinite 0s;
 }
 
 .icon-terminal {
-    bottom: 15%;
-    right: -5%;
+    bottom: 20%;
+    right: 0%;
+    transform: translateX(50%);
     color: var(--accent-secondary);
-    animation-delay: 1.5s;
+    animation: float-icon-right 4s ease-in-out infinite 1.5s;
 }
 
 .icon-cpu {
-    top: 50%;
-    left: -15%;
+    top: 60%;
+    left: 0%;
+    transform: translateX(-50%);
     color: var(--accent-tertiary);
-    animation-delay: 3s;
+    animation: float-icon-left 4s ease-in-out infinite 3s;
 }
 
 .btn-icon {
@@ -315,5 +345,9 @@
 
     .hero-buttons {
         justify-content: center;
+    }
+
+    .hero-image-placeholder {
+        width: min(350px, 80vw);
     }
 }
