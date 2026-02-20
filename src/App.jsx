@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="app">
       <CustomCursor />
+      <div className="animated-grid-bg"></div>
       <Navbar />
       <main>
         <Hero />

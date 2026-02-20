@@ -1,4 +1,6 @@
 import { Award } from 'lucide-react';
+import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 import './Certifications.css';
 
 const Certifications = () => {
@@ -35,22 +37,65 @@ const Certifications = () => {
         }
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2 }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+    };
+
     return (
         <section id="certifications" className="certifications">
             <div className="container">
-                <h2 className="section-title">Certifications</h2>
-                <div className="certs-grid">
+                <motion.h2
+                    className="section-title"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Certifications
+                </motion.h2>
+                <motion.div
+                    className="certs-grid"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                >
                     {certs.map((cert, index) => (
-                        <div key={index} className="cert-card glass-panel">
-                            <div className="cert-icon">{cert.icon}</div>
-                            <div className="cert-info">
-                                <h3>{cert.name}</h3>
-                                <p>{cert.issuer}</p>
-                                <span className="cert-date text-gradient">{cert.date}</span>
-                            </div>
-                        </div>
+                        <motion.div key={index} variants={cardVariants} className="cert-card-wrapper">
+                            <Tilt
+                                tiltMaxAngleX={10}
+                                tiltMaxAngleY={10}
+                                perspective={1000}
+                                scale={1.05}
+                                transitionSpeed={2000}
+                                gyroscope={true}
+                                className="cert-tilt-container"
+                            >
+                                <div className="cert-card glass-panel">
+                                    <div className="cert-icon-container">
+                                        <div className="cert-icon">{cert.icon}</div>
+                                        <div className="cert-icon-glow"></div>
+                                    </div>
+                                    <div className="cert-info">
+                                        <h3>{cert.name}</h3>
+                                        <p>{cert.issuer}</p>
+                                        <span className="cert-date text-gradient">{cert.date}</span>
+                                    </div>
+                                    <div className="cert-card-border-glow"></div>
+                                </div>
+                            </Tilt>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
