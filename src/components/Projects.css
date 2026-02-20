@@ -1,5 +1,7 @@
 .projects {
-    background-color: var(--bg-surface);
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
 }
 
 .projects-grid {

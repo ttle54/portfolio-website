@@ -4,27 +4,22 @@ import './Projects.css';
 const Projects = () => {
     const projects = [
         {
-            title: "Workout App",
-            description: "A dynamic fitness tracking application built to manage user routines. Integrated Cloud-native backend features.",
-            techStack: ["React", "AWS API Gateway", "Lambda", "DynamoDB"],
-            image: "🏋️‍♂️",
-            github: "#",
-            demo: "#"
+            title: "Enterprise-wide Disaster Recovery Strategy",
+            description: "Orchestrated disaster recovery strategy leveraging AWS DRS, Load Balancers, and Auto Scaling groups, ensuring 5 min RTO and 99.99% uptime during DR simulations.",
+            techStack: ["AWS DRS", "Auto Scaling", "Load Balancers"],
+            image: "🛡️",
         },
         {
-            title: "Automated Cloud Deployer",
-            description: "An open-source CLI tool that uses Terraform to automatically stand up full VPCs and secure subnets in AWS within minutes.",
-            techStack: ["Terraform", "Go", "AWS CLI"],
+            title: "AWS GovCloud Infrastructure Automation",
+            description: "Automated AWS GovCloud infrastructure using Terraform and Ansible, cutting provisioning time by 50% while maintaining CIS/NIST compliance.",
+            techStack: ["AWS GovCloud", "Terraform", "Ansible", "CIS/NIST"],
             image: "☁️",
-            github: "#",
-            demo: "#"
         },
         {
-            title: "GenAI Infrastructure Bot",
-            description: "An internal slack bot using AWS Bedrock to help junior engineers troubleshoot common deployment issues.",
-            techStack: ["AWS Bedrock", "Python", "Lambda", "Slack SDK"],
-            image: "🤖",
-            github: "#"
+            title: "Microservices Migration to AWS EKS",
+            description: "Engineered microservices migration to AWS EKS using Kubernetes, Helm, and CodePipeline. Reduced release time by 50% with fully automated blue/green deployments.",
+            techStack: ["AWS EKS", "Kubernetes", "Helm", "CodePipeline"],
+            image: "🚀",
         }
     ];
 

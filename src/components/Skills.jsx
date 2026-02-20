@@ -1,36 +1,56 @@
-import {
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    Tooltip,
-    ResponsiveContainer,
-    Cell
-} from 'recharts';
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import { Cloud, Server, Shield } from 'lucide-react';
 import './Skills.css';
 
 const Skills = () => {
-    const skillData = [
-        { name: 'AWS', level: 95 },
-        { name: 'Terraform', level: 90 },
-        { name: 'CI/CD (Jenkins/GH)', level: 85 },
-        { name: 'Linux/Bash', level: 85 },
-        { name: 'Ansible', level: 80 },
-        { name: 'Splunk/Dynatrace', level: 75 },
-        { name: 'Docker', level: 80 },
-        { name: 'GenAI (AIF-C01)', level: 70 },
+    const skillCategories = [
+        {
+            title: "Cloud & Orchestration",
+            icon: <Cloud size={32} className="category-icon" />,
+            skills: [
+                { name: 'AWS Cloud Services', level: 95 },
+                { name: 'Terraform / CloudFormation', level: 95 },
+                { name: 'Ansible / Docker', level: 85 }
+            ]
+        },
+        {
+            title: "DevOps & Security",
+            icon: <Shield size={32} className="category-icon" />,
+            skills: [
+                { name: 'CI/CD (Jenkins/GitLab)', level: 90 },
+                { name: 'Security (IAM, WAF)', level: 85 },
+                { name: 'CIS/NIST Compliance', level: 80 }
+            ]
+        },
+        {
+            title: "Observability & Networking",
+            icon: <Server size={32} className="category-icon" />,
+            skills: [
+                { name: 'Splunk / CloudWatch', level: 85 },
+                { name: 'Networking (Transit GW, ALB)', level: 80 },
+                { name: 'Linux / Bash', level: 85 }
+            ]
+        }
     ];
 
-    const customTooltip = ({ active, payload, label }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="custom-tooltip glass-panel">
-                    <p className="label">{`${label} : ${payload[0].value}% Proficiency`}</p>
-                </div>
-            );
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2
+            }
         }
-        return null;
+    };
+
+    const cardVariants = {
+        hidden: { y: 30, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { type: "spring", stiffness: 100, damping: 12 }
+        }
     };
 
     return (
@@ -43,34 +63,60 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    Technical Proficiency
+                    Technical Arsenal
                 </motion.h2>
+
                 <motion.div
-                    className="skills-chart-container glass-panel"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, type: "spring", bounce: 0.3 }}
+                    className="skills-grid"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
                 >
-                    <ResponsiveContainer width="100%" height={400}>
-                        <BarChart data={skillData} layout="vertical" margin={{ top: 5, right: 30, left: 40, bottom: 5 }}>
-                            <XAxis type="number" hide />
-                            <YAxis
-                                dataKey="name"
-                                type="category"
-                                axisLine={false}
-                                tickLine={false}
-                                tick={{ fill: 'var(--text-secondary)', fontSize: 14 }}
-                                width={150}
-                            />
-                            <Tooltip cursor={{ fill: 'rgba(255,255,255,0.05)' }} content={customTooltip} />
-                            <Bar dataKey="level" radius={[0, 4, 4, 0]} barSize={20}>
-                                {skillData.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={`var(--accent-primary)`} />
-                                ))}
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
+                    {skillCategories.map((category, idx) => (
+                        <motion.div key={idx} variants={cardVariants} className="skill-card-wrapper">
+                            <Tilt
+                                tiltMaxAngleX={5}
+                                tiltMaxAngleY={5}
+                                perspective={1000}
+                                scale={1.02}
+                                transitionSpeed={2000}
+                                gyroscope={true}
+                                className="skill-tilt-container"
+                            >
+                                <div className="skill-card glass-panel">
+                                    <div className="skill-header">
+                                        <div className="icon-wrapper">
+                                            {category.icon}
+                                        </div>
+                                        <h3 className="category-title">{category.title}</h3>
+                                    </div>
+
+                                    <div className="skills-list">
+                                        {category.skills.map((skill, i) => (
+                                            <div key={i} className="skill-item">
+                                                <div className="skill-info">
+                                                    <span className="skill-name">{skill.name}</span>
+                                                    <span className="skill-percentage text-gradient">{skill.level}%</span>
+                                                </div>
+                                                <div className="progress-bar-bg">
+                                                    <motion.div
+                                                        className="progress-bar-fill"
+                                                        initial={{ width: 0 }}
+                                                        whileInView={{ width: `${skill.level}%` }}
+                                                        viewport={{ once: true }}
+                                                        transition={{ duration: 1.5, delay: 0.2 + (i * 0.1), ease: "easeOut" }}
+                                                    />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {/* Decorative glow elements */}
+                                    <div className="card-glow"></div>
+                                </div>
+                            </Tilt>
+                        </motion.div>
+                    ))}
                 </motion.div>
             </div>
         </section>
