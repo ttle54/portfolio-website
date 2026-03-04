@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import Chatbot from './components/Chatbot';
 
 import './index.css';
 
@@ -25,6 +26,7 @@ function App() {
         <Certifications />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
