@@ -127,9 +127,14 @@ const Chatbot = () => {
       )}
       
       {!isOpen && (
-        <button className="chatbot-toggle" onClick={() => setIsOpen(true)}>
-          <MessageSquare size={24} />
-        </button>
+        <div className="chatbot-toggle-wrapper">
+          <div className="chatbot-suggestion" onClick={() => setIsOpen(true)}>
+            Got questions? Chat with my AI twin! 🤖
+          </div>
+          <button className="chatbot-toggle" onClick={() => setIsOpen(true)}>
+            <MessageSquare size={24} />
+          </button>
+        </div>
       )}
     </div>
   );
