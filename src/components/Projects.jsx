@@ -4,22 +4,22 @@ import './Projects.css';
 const Projects = () => {
     const projects = [
         {
-            title: "Enterprise-wide Disaster Recovery Strategy",
-            description: "Orchestrated disaster recovery strategy leveraging AWS DRS, Load Balancers, and Auto Scaling groups, ensuring 5 min RTO and 99.99% uptime during DR simulations.",
-            techStack: ["AWS DRS", "Auto Scaling", "Load Balancers"],
-            image: "🛡️",
+            title: "Agentic RAG Workflows & Hybrid-Search",
+            description: "Orchestrated agentic RAG workflows using LangChain to integrate Bedrock and Anthropic SDKs. Engineered high-performance Hybrid-Search using OpenSearch Serverless, cutting retrieval latency by 40%.",
+            techStack: ["LangChain", "AWS Bedrock", "OpenSearch", "Python"],
+            image: "🎯",
         },
         {
-            title: "AWS GovCloud Infrastructure Automation",
-            description: "Automated AWS GovCloud infrastructure using Terraform and Ansible, cutting provisioning time by 50% while maintaining CIS/NIST compliance.",
-            techStack: ["AWS GovCloud", "Terraform", "Ansible", "CIS/NIST"],
-            image: "☁️",
-        },
-        {
-            title: "Microservices Migration to AWS EKS",
-            description: "Engineered microservices migration to AWS EKS using Kubernetes, Helm, and CodePipeline. Reduced release time by 50% with fully automated blue/green deployments.",
-            techStack: ["AWS EKS", "Kubernetes", "Helm", "CodePipeline"],
+            title: "Multi-Agent Orchestration Framework",
+            description: "Designed a multi-agent orchestration framework using Anthropic SDKs, achieving a 30% increase in operational efficiency via Planning-Execution patterns and improving system reliability.",
+            techStack: ["Anthropic SDKs", "Multi-Agent", "Python"],
             image: "🚀",
+        },
+        {
+            title: "GovCloud AI Infrastructure Automation",
+            description: "Automated SageMaker fine-tuning pipelines and LLM evaluation benchmarks via Modular Terraform HCL. Hardened GovCloud perimeters using IAM Permission Boundaries and KMS-CMK.",
+            techStack: ["AWS GovCloud", "Terraform", "SageMaker", "IAM/KMS"],
+            image: "🛡️",
         }
     ];
 

@@ -5,27 +5,27 @@ import './Experience.css';
 const Experience = () => {
     const experiences = [
         {
-            role: "Cloud Engineer",
+            role: "AI Engineer",
             company: "CGI Inc",
             duration: "Oct 2024 - Present",
-            description: "Automated AWS GovCloud infrastructure using Terraform and Ansible, cutting provisioning time by 50%. Administered and automated AWS environments (EKS, ECS, API Gateway, CloudTrail), achieving 99.99% uptime.",
-            tech: ["AWS GovCloud", "Terraform", "Jenkins", "EKS", "Ansible"],
+            description: "Orchestrated agentic RAG workflows using LangChain and LlamaIndex to integrate Bedrock and Anthropic SDKs. Engineered high-performance Hybrid-Search and automated SageMaker fine-tuning pipelines via Modular Terraform.",
+            tech: ["AWS GovCloud", "Bedrock", "LangChain", "MCP", "Terraform"],
             logo: <Building2 className="company-logo" size={24} />
         },
         {
-            role: "Cloud Engineer",
+            role: "AI Engineer",
             company: "Kingstone Insurance Company",
-            duration: "Mar 2024 - Oct 2024",
-            description: "Led Tier 3 cloud operations for 200+ production workloads. Engineered microservices migration to AWS EKS using Kubernetes and Helm. Orchestrated enterprise-wide Disaster Recovery strategy leveraging AWS DRS.",
-            tech: ["AWS EKS", "Terraform", "Kubernetes", "Splunk", "AWS DRS"],
+            duration: "Nov 2023 - Oct 2024",
+            description: "Designed a multi-agent orchestration framework using Anthropic SDKs. Standardized Vector Database scaling on EKS using Terraform and integrated AWS Security Hub with EventBridge.",
+            tech: ["Multi-Agent AI", "AWS EKS", "Terraform", "Security Hub", "Neo4j"],
             logo: <Building2 className="company-logo" size={24} />
         },
         {
             role: "Cloud Engineer",
             company: "Patterson-UTI Management Services",
             duration: "May 2021 - Nov 2023",
-            description: "Architected multi-region AWS infrastructure using Terraform and CloudFormation, enabling high availability. Delivered Tier 3 support for 150+ AWS-hosted enterprise systems.",
-            tech: ["AWS", "Terraform", "CloudFormation", "CloudWatch", "Splunk"],
+            description: "Provisioned 150+ AWS enterprise systems via Terraform and GitHub Actions for ML training. Integrated AWS Secrets Manager and streamlined S3 Intelligent-Tiering for multi-petabyte datasets.",
+            tech: ["AWS", "Terraform", "CloudWatch", "RBAC", "Ansible"],
             logo: <Building2 className="company-logo" size={24} />
         }
     ];

@@ -6,6 +6,18 @@ import './Certifications.css';
 const Certifications = () => {
     const certs = [
         {
+            name: "AWS Certified Machine Learning Engineer Associate",
+            issuer: "Amazon Web Services",
+            date: "Jun 2026",
+            icon: <Award size={40} className="cert-icon-svg" />
+        },
+        {
+            name: "AWS Certified AI Practitioner",
+            issuer: "Amazon Web Services",
+            date: "Mar 2026",
+            icon: <Award size={40} className="cert-icon-svg" />
+        },
+        {
             name: "HashiCorp Certified: Terraform Associate",
             issuer: "HashiCorp",
             date: "Mar 2025",

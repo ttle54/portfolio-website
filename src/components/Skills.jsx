@@ -6,30 +6,30 @@ import './Skills.css';
 const Skills = () => {
     const skillCategories = [
         {
-            title: "Cloud & Orchestration",
+            title: "AI & Cloud Platforms",
             icon: <Cloud size={32} className="category-icon" />,
             skills: [
-                { name: 'AWS Cloud Services', level: 95 },
-                { name: 'Terraform / CloudFormation', level: 95 },
-                { name: 'Ansible / Docker', level: 85 }
+                { name: 'AWS Bedrock / SageMaker', level: 95 },
+                { name: 'GovCloud / Cloud Platforms', level: 95 },
+                { name: 'MLOps / LLM Deployment', level: 90 }
             ]
         },
         {
-            title: "DevOps & Security",
-            icon: <Shield size={32} className="category-icon" />,
-            skills: [
-                { name: 'CI/CD (Jenkins/GitLab)', level: 90 },
-                { name: 'Security (IAM, WAF)', level: 85 },
-                { name: 'CIS/NIST Compliance', level: 80 }
-            ]
-        },
-        {
-            title: "Observability & Networking",
+            title: "IaC & Automation",
             icon: <Server size={32} className="category-icon" />,
             skills: [
-                { name: 'Splunk / CloudWatch', level: 85 },
-                { name: 'Networking (Transit GW, ALB)', level: 80 },
-                { name: 'Linux / Bash', level: 85 }
+                { name: 'Terraform / CloudFormation', level: 95 },
+                { name: 'EKS / Kubernetes', level: 90 },
+                { name: 'CI/CD (Jenkins/GitLab)', level: 85 }
+            ]
+        },
+        {
+            title: "Security & Observability",
+            icon: <Shield size={32} className="category-icon" />,
+            skills: [
+                { name: 'Splunk / CloudWatch', level: 90 },
+                { name: 'IAM / KMS / WAF', level: 85 },
+                { name: 'NIST / FedRAMP Compliance', level: 85 }
             ]
         }
     ];

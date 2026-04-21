@@ -111,12 +111,12 @@ const About = () => {
                         <div className="stat-item glow-divider"></div>
                         <div className="stat-item">
                             <span className="stat-number text-gradient">10+</span>
-                            <span className="stat-label">Cloud<br />Projects</span>
+                            <span className="stat-label">AI/Cloud<br />Projects</span>
                         </div>
                         <div className="stat-item glow-divider"></div>
                         <div className="stat-item">
-                            <span className="stat-number text-gradient">5</span>
-                            <span className="stat-label">Cloud & IaC<br />Certifications</span>
+                            <span className="stat-number text-gradient">7</span>
+                            <span className="stat-label">AI, Cloud & IaC<br />Certifications</span>
                         </div>
                     </motion.div>
                 </div>
