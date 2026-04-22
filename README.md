@@ -1,6 +1,6 @@
-# Cloud Engineer Portfolio
+# AI Platform Engineer Portfolio
 
-A modern, highly interactive cloud engineer portfolio website designed to showcase infrastructure expertise, CI/CD pipelines, and cloud-native projects with a "Vibrant Tech" aesthetic.
+A modern, highly interactive AI platform engineer portfolio website designed to showcase infrastructure expertise, CI/CD pipelines, and cloud-native projects with a "Vibrant Tech" aesthetic.
 
 ## 🚀 Features
 - **Vibrant Tech Aesthetic**: Glassmorphism UI, breathing neon gradients, and a stark dark mode.
