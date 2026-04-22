@@ -25,7 +25,8 @@ const Chatbot = () => {
     if (!input.trim() || isLoading) return;
 
     const userMessage = { role: 'user', content: input.trim() };
-    setMessages(prev => [...prev, userMessage]);
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
     setInput('');
     setIsLoading(true);
 
@@ -33,24 +34,31 @@ const Chatbot = () => {
       // Replace with your actual AWS API Gateway endpoint from .env
       const apiUrl = import.meta.env.VITE_AWS_CHAT_API;
       
-      if (!apiUrl) {
+      if (!apiUrl || apiUrl.includes('your-api-gateway-id')) {
          // Mock response if API is not configured
          setTimeout(() => {
             setMessages(prev => [...prev, {
               role: 'assistant',
-              content: "AWS Backend is not completely configured yet. Please configure `VITE_AWS_CHAT_API` in your `.env` file to connect to Bedrock."
+              content: "AWS Backend is not completely configured yet. Please configure `VITE_AWS_CHAT_API` with your actual API Gateway URL in your `.env` file to connect to Bedrock."
             }]);
             setIsLoading(false);
          }, 1000);
          return;
       }
 
+      // Bedrock Converse API strictly requires the first message to be from 'user'.
+      // We slice off the hardcoded initial assistant greeting to prevent ValidationException.
+      const historyToSend = newMessages.slice(1).map(msg => ({
+        role: msg.role,
+        content: msg.content
+      }));
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: userMessage.content }),
+        body: JSON.stringify({ messages: historyToSend }),
       });
 
       if (!response.ok) {

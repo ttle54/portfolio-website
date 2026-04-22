@@ -79,9 +79,24 @@ export const handler = async (event) => {
         return { statusCode: 400, body: JSON.stringify({ message: "Invalid JSON format" }) };
     }
   
-    const userMessage = body.message;
-    if (!userMessage) {
-        return { statusCode: 400, body: JSON.stringify({ message: "Missing 'message' field" }) };
+    // Check if the frontend sent an array of messages (conversation history) or a single message
+    let conversation = [];
+    if (body.messages && Array.isArray(body.messages)) {
+        // Format each message for the Converse API
+        conversation = body.messages.map(msg => ({
+            role: msg.role,
+            content: [{ text: msg.content }]
+        }));
+    } else if (body.message) {
+        // Fallback for single message
+        conversation = [
+            {
+                role: "user",
+                content: [{ text: body.message }]
+            }
+        ];
+    } else {
+        return { statusCode: 400, body: JSON.stringify({ message: "Missing 'messages' or 'message' field" }) };
     }
 
     // THIS IS YOUR SYSTEM PROMPT: Put your resume data and instructions here!
@@ -152,12 +167,7 @@ Answer questions based ONLY on this information:
 
     // Format the prompt for Amazon Nova models (Converse API format)
     const payload = {
-        messages: [
-            {
-                role: "user",
-                content: [{ text: userMessage }]
-            }
-        ],
+        messages: conversation,
         system: [{ text: SYSTEM_PROMPT }],
         inferenceConfig: {
             maxTokens: 500
