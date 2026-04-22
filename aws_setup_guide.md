@@ -90,53 +90,54 @@ Answer questions based ONLY on this information:
 
 # Contact & Profile
 - Name: Tony T Le
-- Role: AWS Cloud Engineer
+- Role: AI Platform Engineer
 - Email: tonyle9493@gmail.com
 - Phone: 713-480-6658
 - LinkedIn: linkedin.com/in/ttle54
-- Summary: Collaborative AWS Cloud Engineer with 7+ years of experience and an AWS Certified AI Practitioner credential, specializing in secure GovCloud environments. While at CGI, partnered with California Health and Human Services (CHHS) to co-architect a GenAI engine that automated 10M+ records with 99.8% accuracy, reducing audit cycles by 75%. Expert at leading cross-functional teams to deploy scalable Bedrock and SageMaker solutions while maintaining strict NIST/FedRAMP compliance.
+- Summary: AI Platform Engineer with 2+ years of experience specializing in the orchestration of production-grade LLM Ops and Agentic RAG workflows within AWS GovCloud. Support the CHHS GenAI engine, leveraging Python, LangChain, and LlamaIndex to automate 10M plus records with 99.8 percent inference accuracy via AWS Bedrock and OpenAI SDKs. Expert in Model Context Protocol (MCP) and token cost optimization, reducing federal audit cycles by 75 percent while maintaining strict NIST/FedRAMP secure-by-default compliance for high-scale AI/ML ecosystems.
 
 # Skills
 - Cloud Platforms: AWS (EC2, Lambda, S3, RDS, Aurora, VPC, Route 53, CloudFront, GovCloud)
 - AI/ML: AWS Bedrock, SageMaker, MLOps, LLM Deployment, Model Monitoring
 - Infrastructure as Code: Terraform, CloudFormation, Ansible, Docker
 - DevOps & Automation: Jenkins, GitLab CI/CD, AWS CodePipeline, Helm, EKS
-- Security & Compliance: IAM, KMS, CyberArk, AWS Shield, WAF, Certificate Manager, CIS/NIST
+- Security & Compliance: IAM, KMS, AWS Shield, WAF, Certificate Manager, CIS/NIST
 - Monitoring & Budget: CloudWatch, Splunk, AWS Systems Manager, Cost Explorer, CloudHealth
 - Networking: Security Groups, NACLs, ALB/NLB, Transit Gateway, Direct Connect
 - Scripting & Tools: Python, Bash, YAML, JSON
 - Operating Systems: RHEL, Windows Server
 
 # Professional Experience
-## Cloud Engineer @ CGI Inc, San Francisco, CA (Oct 2024 – Present)
-- Architected secure GenAI workflows for California HHS using AWS Bedrock and Lambda within GovCloud, reducing manual data processing for state-level eligibility checks by 60%.
-- Developed a custom Kiro-assisted development framework to automate Terraform provisioning, which cut AI environment setup time by 50% and eliminated drift in GovCloud environments.
-- Hardened cloud security for CHHS AI workloads using IAM and AWS Shield, achieving a 35% risk reduction while maintaining strict NIST/CIS compliance for sensitive public sector datasets.
-- Deployed CloudWatch, Splunk, and AWS Systems Manager to automate model observability, cutting mean-time-to-resolution (MTTR) for inference errors by 40%.
-- Optimized AWS resource utilization via Cost Explorer, reducing AI-related cloud spend by 25% through the implementation of automated GPU-instance scheduling and lifecycle policies.
-- Co-engineered LLM-based chatbot for public health inquiries, reducing manual support tickets by 45% while ensuring PII protection via AWS KMS.
+## AI Engineer @ CGI Inc, San Francisco, CA (Oct 2024 – Present)
+- Orchestrated agentic RAG workflows using LangChain and LlamaIndex to integrate Bedrock and Anthropic SDKs, achieving 99.8 percent inference accuracy for 10M plus records.
+- Integrated Model Context Protocol (MCP) for secure tool-use and function calling against legacy databases, reducing manual audit cycles by 75 percent.
+- Engineered high-performance Hybrid-Search using OpenSearch Serverless and custom embedding pipelines, cutting knowledge retrieval latency by 40 percent.
+- Automated SageMaker fine-tuning pipelines and LLM evaluation benchmarks via Modular Terraform HCL, reducing infrastructure provisioning time by 50 percent.
+- Hardened GovCloud perimeters using IAM Permission Boundaries and KMS-CMK encryption for vector embeddings, achieving a 35 percent reduction in unauthorized API attempts.
+- Implemented observability via CloudWatch and custom Python tooling to monitor token consumption and streaming interfaces, cutting MTTR for hallucination events by 45 percent.
 
-## Cloud Engineer @ Kingstone Insurance Company, Kingston, NY (Mar 2024 – Oct 2024)
-- Engineered high-performance MLOps pipelines on AWS EKS using Kubernetes and Helm, which enabled fully automated blue/green deployments for predictive risk models.
-- Reduced release time for production workloads by 50% by integrating proactive autoscaling and zero downtime rollouts into the CI/CD pipeline.
-- Implemented automated compliance controls with KMS and CyberArk to meet NYDFS and SOC 2 standards, reducing security exposure by 40% through continuous scanning.
-- Orchestrated an enterprise-wide Disaster Recovery strategy leveraging AWS DRS, ensuring a <5 min RTO for mission-critical applications during quarterly failover drills.
-- Led Tier 3 cloud operations for 200+ production workloads, performing root cause analysis via Jira and automating incident alerts with Splunk + CloudWatch, cutting MTTR by 30%.
-- Standardized AWS infrastructure deployment using reusable Terraform modules and Ansible playbooks, reducing provisioning time by 60% and ensuring 99.99% uptime.
+## AI Engineer @ Kingstone Insurance Company, Kingston, NY (Nov 2023 – Oct 2024)
+- Designed a multi-agent orchestration framework using Anthropic SDKs, achieving a 30 percent increase in operational efficiency via Planning-Execution patterns.
+- Implemented system reliability patterns including exponential backoff retry/fallback models, resulting in a 25 percent reduction in LLM API operational overhead.
+- Standardized Vector Database scaling on EKS using modular Terraform and Karpenter, ensuring 99.99 percent availability for real-time semantic search applications.
+- Integrated AWS Security Hub with EventBridge to automate AI compliance scanning and PII masking, improving audit-readiness scores by 40 percent.
+- Refined Knowledge Graph architectures (Neo4j) to enhance RAG context-density, resulting in a 20 percent improvement in model response relevancy and RAGAS scores.
+- Optimized Amazon EKS clusters for high-throughput inference via Horizontal Pod Autoscaling (HPA), maintaining 99.9 percent uptime during peak traffic
 
 ## Cloud Engineer @ Patterson-UTI Management Services, Houston, TX (May 2021-Nov 2023)
-- Incident Management & Tier 3 Support: Provided Tier 3 support for AWS infrastructure, responding to escalated incidents and collaborating with customers to resolve tickets via JIRA.
-- Delivered Tier 3 support for 150+ AWS-hosted enterprise systems, automating incident triage with CloudWatch, SNS, and Lambda.
-- Cut average ticket resolution time by 30% and improved reliability through proactive monitoring dashboards in Splunk.
-- Architected multi-region AWS infrastructure using Terraform and CloudFormation, enabling high availability (HA) and fault tolerance for enterprise-scale applications across 3 AWS regions.
-- Led the migration of legacy database clusters to Amazon Aurora, improving query performance by 55% for mission-critical health data.
-- Partnered with audit teams to maintain 100% compliance with internal security audits for all enterprise-scale applications.
+- Provisioned 150 plus AWS enterprise systems via Terraform and GitHub Actions to support distributed ML training, accelerating internal model time-to-market by 80 percent.
+- Integrated AWS Secrets Manager and SSM for secure token management in GenAI pipelines, reducing credential leakage incidents to zero.
+- Developed observability stacks using CloudWatch and SNS to provide proactive alerting for drift detection in production machine learning models.
+- Implemented RBAC-based data access for AI research environments, ensuring 100 percent compliance with least-privilege protocols for sensitive enterprise datasets.
+- Streamlined S3 Intelligent-Tiering for multi-petabyte LLM training sets and embedding archives, reducing annual storage expenditures by 15 percent or 120k plus dollars.
+- Automated baseline security configurations for RHEL/Windows nodes via Ansible, reducing post-deployment configuration drift by 45 percent
 
 # Education & Certifications
-- Master of Business Administration, Western Governors University, Utah (Expected Aug 2025)
+- Master of Business Administration, Western Governors University, Utah (Aug 2025)
 - Bachelor of Science, Computer Science, University of Houston, Houston, TX (Jun 2018)
-- AWS Certified AI Practitioner (Expected Mar 2026)
-- HashiCorp Terraform Associate (Expected Mar 2025)
+- AWS Certified Machine Learning Engineer Associate (Jun 2026)
+- AWS Certified AI Practitioner (Mar 2026)
+- HashiCorp Terraform Associate (Mar 2025)
 - AWS Certified Developer Associate (Feb 2025)
 - AWS Certified SysOps Associate (Mar 2024)
 - AWS Certified Solution Architect Associate (Feb 2021)
