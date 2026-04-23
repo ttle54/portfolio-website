@@ -62,16 +62,33 @@ const Chatbot = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        let errorMsg = `Server response was ${response.status}`;
+        try {
+          const errData = await response.json();
+          if (errData && errData.reply) {
+            errorMsg = errData.reply;
+          } else if (errData && errData.message) {
+            errorMsg = errData.message;
+          }
+        } catch (e) {
+          // Fallback if the body isn't JSON
+        }
+        throw new Error(errorMsg);
       }
 
       const data = await response.json();
       setMessages(prev => [...prev, { role: 'assistant', content: data.reply || "No reply found" }]);
     } catch (error) {
       console.error("Error fetching from bot:", error);
+      
+      const isCustomError = error.message.includes('Server response was') || error.message.includes('Sorry, my backend hit a snag talking to Bedrock') || error.message.includes('Invalid JSON format') || error.message.includes('Missing \'message\' field');
+      const displayMessage = isCustomError 
+        ? error.message 
+        : "Sorry, I encountered an error connecting to the backend. Please try again later.";
+
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: "Sorry, I encountered an error connecting to the backend. Please try again later." 
+        content: displayMessage
       }]);
     } finally {
       setIsLoading(false);
